@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test:demo": "ng test demo --browsers ChromeHeadless --watch false",
+    "test:lib": "ng test carbon --browsers ChromeHeadless --watch false",
+    "test": "npm run test:lib && npm run test:demo"
   },
   "private": true,
   "dependencies": {
