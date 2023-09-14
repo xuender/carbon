@@ -1,12 +1,28 @@
 <h1>DEMO</h1>
 
-<h2>Dialog Service</h2>
+<h2>DialogService</h2>
+
 <h3>alert</h3>
-<button (click)="alert('xxx')">alert xxx</button>
+<button (click)="alert()">提示信息</button>
 <pre>
-  alert('xxx')
+  dialogService.alert('提示信息')
+</pre>
+
+<h3>confirm</h3>
+<button (click)="confirm()">询问信息</button>
+<pre>
+const ret = await dialogService.confirm('是否xxx吗?');
+dialogService.alert(ret);
+</pre>
+
+<h3>danger</h3>
+<button (click)="danger()">警告信息</button>
+<pre>
+const ret = await dialogService.danger('确认删除吗?');
+dialogService.alert(ret);
 </pre>
 <h2>Pipes</h2>
+
 <h3>Msec</h3>
 {{ num | msec}}
 <pre>
