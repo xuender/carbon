@@ -3,11 +3,48 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "carbon": {
+      "projectType": "library",
+      "root": "projects/carbon",
+      "sourceRoot": "projects/carbon/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/carbon/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/carbon/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/carbon/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/carbon/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        }
+      }
+    },
     "demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "standalone": true
+        },
+        "@schematics/angular:directive": {
+          "standalone": true
+        },
+        "@schematics/angular:pipe": {
+          "standalone": true
         }
       },
       "root": "projects/demo",
@@ -20,18 +57,14 @@
             "outputPath": "dist/demo",
             "index": "projects/demo/src/index.html",
             "main": "projects/demo/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/demo/src/favicon.ico",
               "projects/demo/src/assets"
             ],
-            "styles": [
-              "projects/demo/src/styles.scss"
-            ],
+            "styles": ["projects/demo/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -82,53 +115,15 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/demo/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/demo/src/favicon.ico",
               "projects/demo/src/assets"
             ],
-            "styles": [
-              "projects/demo/src/styles.scss"
-            ],
+            "styles": ["projects/demo/src/styles.scss"],
             "scripts": []
-          }
-        }
-      }
-    },
-    "carbon": {
-      "projectType": "library",
-      "root": "projects/carbon",
-      "sourceRoot": "projects/carbon/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/carbon/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/carbon/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/carbon/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/carbon/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
           }
         }
       }

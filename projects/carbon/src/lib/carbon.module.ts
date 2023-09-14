@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { CarbonComponent } from './carbon.component';
 import { MsecPipe } from './msec.pipe';
 

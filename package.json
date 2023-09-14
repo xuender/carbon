@@ -6,9 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test:demo": "ng test demo --browsers ChromeHeadless --watch false",
-    "test:lib": "ng test carbon --browsers ChromeHeadless --watch false",
-    "test": "npm run test:lib && npm run test:demo"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +18,7 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "date-fns": "^2.30.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
