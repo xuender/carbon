@@ -30,6 +30,15 @@
             "tsConfig": "projects/carbon/tsconfig.spec.json",
             "polyfills": ["zone.js", "zone.js/testing"]
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/carbon/src/**/*.ts",
+              "projects/carbon/src/**/*.html"
+            ]
+          }
         }
       }
     },

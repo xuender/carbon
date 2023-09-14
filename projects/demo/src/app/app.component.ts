@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { CarbonModule, DialogService } from 'projects/carbon/src/public-api';
 
 @Component({
-  selector: 'app-root',
+  selector: 'car-root',
   standalone: true,
   imports: [CommonModule, CarbonModule, IonicModule],
   templateUrl: './app.component.html',
