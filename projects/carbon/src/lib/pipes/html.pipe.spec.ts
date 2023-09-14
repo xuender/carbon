@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { SanitizeHtmlPipe } from './sanitize-html.pipe';
+import { HtmlPipe } from './html.pipe';
 
-describe('SanitizeHtmlPipe', () => {
-  let pipe: SanitizeHtmlPipe;
+describe('HtmlPipe', () => {
+  let pipe: HtmlPipe;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [BrowserModule, SanitizeHtmlPipe],
+      providers: [BrowserModule, HtmlPipe],
     }).compileComponents();
-    pipe = TestBed.inject(SanitizeHtmlPipe);
+    pipe = TestBed.inject(HtmlPipe);
   });
 
   it('create an instance', () => {

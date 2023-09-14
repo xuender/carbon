@@ -13,6 +13,7 @@ import { CarbonModule, DialogService } from 'projects/carbon/src/public-api';
 })
 export class AppComponent {
   num = 1694653053910;
+  html = '123<del>456</del>789';
   constructor(private dis: DialogService) {}
 
   alert() {
