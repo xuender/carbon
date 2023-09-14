@@ -1,17 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-
-import { CarbonModule, DialogService } from 'projects/carbon/src/public-api';
+import { CarbonModule, DialogService } from 'carbon';
 
 @Component({
-  selector: 'car-root',
+  selector: 'car-dialog-page',
+  templateUrl: './dialog.page.html',
   standalone: true,
   imports: [CommonModule, CarbonModule, IonicModule],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class DialogPage {
   constructor(private dis: DialogService) {}
 
   alert() {

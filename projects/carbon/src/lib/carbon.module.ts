@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
-import { CarbonComponent } from './carbon.component';
-import { HtmlPipe } from './pipes/html.pipe';
 import { MsecPipe } from './pipes/msec.pipe';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 
 @NgModule({
-  declarations: [CarbonComponent, MsecPipe, HtmlPipe],
+  declarations: [MsecPipe, SafeHtmlPipe],
   imports: [IonicModule],
-  exports: [CarbonComponent, MsecPipe, HtmlPipe],
+  exports: [MsecPipe, SafeHtmlPipe],
 })
 export class CarbonModule {}

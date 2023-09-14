@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { HtmlPipe } from './html.pipe';
+import { SafeHtmlPipe } from './safe-html.pipe';
 
-describe('HtmlPipe', () => {
-  let pipe: HtmlPipe;
+describe('SafeHtmlPipe', () => {
+  let pipe: SafeHtmlPipe;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [BrowserModule, HtmlPipe],
+      providers: [BrowserModule, SafeHtmlPipe],
     }).compileComponents();
-    pipe = TestBed.inject(HtmlPipe);
+    pipe = TestBed.inject(SafeHtmlPipe);
   });
 
   it('create an instance', () => {

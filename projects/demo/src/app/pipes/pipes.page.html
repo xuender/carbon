@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>管道</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">管道</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-accordion-group>
+    <ion-accordion value="msec">
+      <ion-item slot="header" color="light">
+        <ion-label>Msec</ion-label>
+      </ion-item>
+      <div slot="content">
+        {{ 1694653053910 | msec}}
+        <pre>1694653053910 | msec</pre>
+        {{ 1694653053910 | msec:'yyyy'}}
+        <pre>1694653053910 | msec:'yyyy'</pre>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>Safe Html</ion-label>
+      </ion-item>
+      <div slot="content">
+        <div [innerHTML]="'123<del>456</del>789'| safeHtml"></div>
+        <pre>&#60;&#100;&#105;&#118;&#32;&#91;&#105;&#110;&#110;&#101;&#114;&#72;&#84;&#77;&#76;&#93;&#61;&#34;&#39;&#49;&#50;&#51;&#60;&#100;&#101;&#108;&#62;&#52;&#53;&#54;&#60;&#47;&#100;&#101;&#108;&#62;&#55;&#56;&#57;&#39;&#124;&#32;&#115;&#97;&#102;&#101;&#72;&#116;&#109;&#108;&#34;&#62;&#60;&#47;&#100;&#105;&#118;&#62;</pre>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>
