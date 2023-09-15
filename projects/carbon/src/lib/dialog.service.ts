@@ -45,7 +45,7 @@ export class DialogService {
   }
 
   danger(message: string) {
-    console.log(`confirm: ${message}`);
+    console.log(`danger: ${message}`);
 
     return this.show({
       message,
