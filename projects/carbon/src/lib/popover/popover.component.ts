@@ -16,6 +16,10 @@ export class PopoverComponent {
   ) {
     this.options = this.navParams.data['options'];
 
+    if (!this.options.items) {
+      this.options.items = [];
+    }
+
     for (const item of this.options.items) {
       if (item.children && item.children.length) {
         this.parent.push(item);
