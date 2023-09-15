@@ -1,10 +1,12 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { provideRouter } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
+import { RouteReuseStrategy, provideRouter } from '@angular/router';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     importProvidersFrom(IonicModule.forRoot({})),
     provideRouter(routes),
   ],

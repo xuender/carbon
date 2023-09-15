@@ -1,12 +1,22 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="pipes">
-      <ion-icon name="play-circle"></ion-icon>
-      管道
+    <ion-tab-button tab="pipes" href="/tabs/pipes">
+      <ion-icon aria-hidden="true" name="play-circle"></ion-icon>
+      <ion-label>
+        管道
+      </ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="dialog">
-      <ion-icon name="radio"></ion-icon>
-      对话框
+    <ion-tab-button tab="dialog" href="/tabs/dialog">
+      <ion-icon aria-hidden="true" name="radio"></ion-icon>
+      <ion-label>
+        对话框
+      </ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="popover" href="/tabs/popover">
+      <ion-icon aria-hidden="true" name="ellipsis-horizontal"></ion-icon>
+      <ion-label>
+        弹出菜单
+      </ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

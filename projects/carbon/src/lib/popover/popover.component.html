@@ -1,0 +1,13 @@
+<ion-content>
+  <ion-list>
+    <ion-list-header *ngIf="options.title">
+      {{ options.title }}
+    </ion-list-header>
+    <ion-item *ngFor="let i of options.items" (click)="close(i.code)" [color]="i.itemColor" button>
+      <ion-icon *ngIf="i.icon" slot="start" [name]="i.icon" [color]="i.iconColor?i.iconColor:i.color"></ion-icon>
+      <ion-label [color]="i.color">{{ i.label }}</ion-label>
+      <ion-badge *ngIf="i.badge" slot="end">{{ i.badge }}</ion-badge>
+      <ion-checkbox *ngIf="i.checked" slot="end" checked="true"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -3,10 +3,11 @@ import { IonicModule } from '@ionic/angular';
 
 import { MsecPipe } from './pipes/msec.pipe';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { PopoverComponent } from './popover/popover.component';
 
 @NgModule({
-  declarations: [MsecPipe, SafeHtmlPipe],
+  declarations: [MsecPipe, SafeHtmlPipe, PopoverComponent],
   imports: [IonicModule],
-  exports: [MsecPipe, SafeHtmlPipe],
+  exports: [MsecPipe, SafeHtmlPipe, PopoverComponent],
 })
 export class CarbonModule {}

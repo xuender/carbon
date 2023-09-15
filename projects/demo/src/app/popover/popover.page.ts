@@ -3,9 +3,9 @@ import { IonicModule } from '@ionic/angular';
 import { CarbonModule } from '../../../../carbon/src/public-api';
 
 @Component({
-  selector: 'car-pipes-page',
-  templateUrl: './pipes.page.html',
+  selector: 'car-popover-page',
+  templateUrl: './popover.page.html',
   standalone: true,
   imports: [CarbonModule, IonicModule],
 })
-export class PipesPage {}
+export class PopoverPage {}
