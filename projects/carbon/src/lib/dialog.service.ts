@@ -32,7 +32,8 @@ export class DialogService {
       buttons: [
         {
           text: '确认',
-          htmlAttributes: { 'aria-label': 'delete' },
+          role: 'ok',
+          htmlAttributes: { 'aria-label': 'ok' },
         },
         {
           text: '取消',
@@ -71,6 +72,6 @@ export class DialogService {
 
     const ret = await alert.onDidDismiss();
 
-    return ret.role != 'cancel';
+    return ret.role && ret.role != 'backdrop' && ret.role != 'cancel';
   }
 }

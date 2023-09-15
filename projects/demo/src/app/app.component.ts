@@ -1,14 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'car-root',
   standalone: true,
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonicModule, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  pages = [
+    { title: '管道', url: 'pipes', icon: 'swap-horizontal' },
+    { title: '对话框', url: 'dialog', icon: 'chatbox' },
+    { title: '弹出菜单', url: 'popover', icon: 'ellipsis-horizontal' },
+  ];
   constructor() {}
 }
