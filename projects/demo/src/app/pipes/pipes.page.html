@@ -23,6 +23,19 @@
         <pre>1694653053910 | msec:'yyyy'</pre>
       </div>
     </ion-accordion>
+    <ion-accordion value="ago">
+      <ion-item slot="header" color="light">
+        <ion-label>Ago</ion-label>
+      </ion-item>
+      <div slot="content">
+        {{ 1694653053910 | ago }}
+        <pre>1694653053910 | ago</pre>
+        {{ now + 1000| ago }}
+        <pre>now + 1000 | ago </pre>
+        {{ now + 100000| ago }}
+        <pre>now + 100000 | ago </pre>
+      </div>
+    </ion-accordion>
     <ion-accordion value="second">
       <ion-item slot="header" color="light">
         <ion-label>Safe Html</ion-label>

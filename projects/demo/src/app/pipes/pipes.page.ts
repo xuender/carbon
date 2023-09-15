@@ -8,4 +8,6 @@ import { CarbonModule } from '../../../../carbon/src/public-api';
   standalone: true,
   imports: [CarbonModule, IonicModule],
 })
-export class PipesPage {}
+export class PipesPage {
+  now = Date.now();
+}
