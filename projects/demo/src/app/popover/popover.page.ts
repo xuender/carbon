@@ -3,9 +3,9 @@ import { IonicModule, PopoverController } from '@ionic/angular';
 
 import {
   CarbonModule,
+  DialogService,
   PopoverComponent,
   PopoverItem,
-  PopoverOptions,
 } from '../../../../carbon/src/public-api';
 
 @Component({
@@ -15,7 +15,12 @@ import {
   imports: [CarbonModule, IonicModule],
 })
 export class PopoverPage {
-  constructor(private popoverCtrl: PopoverController) {}
+  private count = 100;
+  private select = true;
+  constructor(
+    private popoverCtrl: PopoverController,
+    private dialogServ: DialogService
+  ) {}
   async open(event: Event) {
     const items: PopoverItem[] = [
       {
@@ -35,7 +40,7 @@ export class PopoverPage {
         label: '选择',
         code: 'select',
         icon: 'checkbox',
-        checked: true,
+        checked: this.select,
       },
       {
         label: '子菜单',
@@ -46,13 +51,13 @@ export class PopoverPage {
             label: '计数1',
             code: 'count1',
             icon: 'trending-up',
-            badge: 32,
+            badge: this.count,
           },
           {
             label: '计数2',
             code: 'count2',
             icon: 'trending-down',
-            badge: 12,
+            badge: this.count,
           },
         ],
       },
@@ -70,7 +75,23 @@ export class PopoverPage {
       },
     });
     popover.present();
+
     const { data } = await popover.onDidDismiss();
-    console.log(data);
+    switch (data) {
+      case 'count1':
+        this.count++;
+
+        break;
+      case 'count2':
+        this.count--;
+
+        break;
+      case 'select':
+        this.select = !this.select;
+
+        break;
+      default:
+        this.dialogServ.toast(`点击: ${data}`);
+    }
   }
 }

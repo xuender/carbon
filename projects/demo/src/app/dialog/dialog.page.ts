@@ -19,11 +19,15 @@ export class DialogPage {
 
   async confirm() {
     const ret = await this.dis.confirm('是否xxx吗?');
-    this.dis.alert(`${ret}`);
+    this.dis.toast(`选择: ${ret}`);
   }
 
   async danger() {
     const ret = await this.dis.confirm('确认删除吗?');
-    this.dis.alert(`${ret}`);
+    this.dis.toast(`选择: ${ret}`);
+  }
+
+  toast() {
+    this.dis.toast(`提示`);
   }
 }

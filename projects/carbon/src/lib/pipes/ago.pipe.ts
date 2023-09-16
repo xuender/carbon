@@ -32,8 +32,8 @@ export class AgoPipe implements PipeTransform {
     let idx = 1;
 
     if (sec < 0) {
-      last = '后';
       sec *= -1;
+      last = '后';
       idx = 2;
     }
 
@@ -41,13 +41,13 @@ export class AgoPipe implements PipeTransform {
       return '刚刚';
     }
 
-    for (const tf of times) {
-      if (sec < (tf[0] as number)) {
-        if (typeof tf[2] == 'string') {
-          return tf[idx] as string;
+    for (const time of times) {
+      if (sec < (time[0] as number)) {
+        if (typeof time[2] == 'string') {
+          return time[idx] as string;
         }
 
-        return `${Math.floor(sec / tf[2])}${tf[1]}${last}`;
+        return `${Math.floor(sec / time[2])}${time[1]}${last}`;
       }
     }
 

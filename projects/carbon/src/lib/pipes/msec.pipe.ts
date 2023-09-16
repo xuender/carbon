@@ -6,11 +6,11 @@ const formatStr = 'yy-MM-dd HH:mm:ss';
   name: 'msec',
 })
 export class MsecPipe implements PipeTransform {
-  transform(value: number | undefined, ...args: string[]): string {
-    if (!value) {
+  transform(msec: number | undefined, ...args: string[]): string {
+    if (!msec) {
       return '';
     }
 
-    return format(value, args && args.length ? args[0] : formatStr);
+    return format(msec, args && args.length ? args[0] : formatStr);
   }
 }

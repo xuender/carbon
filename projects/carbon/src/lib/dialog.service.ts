@@ -1,11 +1,24 @@
 import { Injectable } from '@angular/core';
-import { AlertController, AlertOptions } from '@ionic/angular';
+import { AlertController, AlertOptions, ToastController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DialogService {
-  constructor(private alertCtrl: AlertController) {}
+  constructor(
+    private alertCtrl: AlertController,
+    private toastCtrl: ToastController
+  ) {}
+
+  async toast(message: string) {
+    const toast = await this.toastCtrl.create({
+      message,
+      duration: 1500,
+      position: 'top',
+    });
+
+    await toast.present();
+  }
 
   alert(message: string) {
     console.log(`alert: ${message}`);
