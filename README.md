@@ -15,3 +15,8 @@ Ionic Angular lib.
 ## Services
 
 * DialogService
+* PopoverService
+
+## Utils
+
+* sleep
