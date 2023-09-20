@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
-import { CarbonModule, DialogService } from '../../../../carbon/src/public-api';
+import { CarbonModule, DialogService } from 'projects/carbon/src/public-api';
 
 @Component({
   selector: 'car-dialog-page',

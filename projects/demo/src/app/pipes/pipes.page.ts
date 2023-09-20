@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { CarbonModule } from '../../../../carbon/src/public-api';
+
+import { CarbonModule } from 'projects/carbon/src/public-api';
 
 @Component({
   selector: 'car-pipes-page',

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicModule, PopoverController } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 
+import { PopoverService } from 'projects/carbon/src/lib/popover/popover.service';
 import {
   CarbonModule,
   DialogService,
-  PopoverComponent,
   PopoverItem,
-} from '../../../../carbon/src/public-api';
+} from 'projects/carbon/src/public-api';
 
 @Component({
   selector: 'car-popover-page',
@@ -18,9 +18,10 @@ export class PopoverPage {
   private count = 100;
   private select = true;
   constructor(
-    private popoverCtrl: PopoverController,
+    private popoverServ: PopoverService,
     private dialogServ: DialogService
   ) {}
+
   async open(event: Event) {
     const items: PopoverItem[] = [
       {
@@ -63,21 +64,16 @@ export class PopoverPage {
       },
     ];
 
-    const popover = await this.popoverCtrl.create({
-      component: PopoverComponent,
-      translucent: true,
-      event,
-      componentProps: {
-        options: {
-          title: '更多功能',
-          items,
-        },
-      },
+    const code = await this.popoverServ.open(event, {
+      title: '更多功能',
+      items,
     });
-    popover.present();
 
-    const { data } = await popover.onDidDismiss();
-    switch (data) {
+    if (!code) {
+      return;
+    }
+
+    switch (code) {
       case 'count1':
         this.count++;
 
@@ -91,7 +87,7 @@ export class PopoverPage {
 
         break;
       default:
-        this.dialogServ.toast(`点击: ${data}`);
+        this.dialogServ.toast(`点击: ${code}`);
     }
   }
 }
