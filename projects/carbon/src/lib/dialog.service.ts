@@ -28,7 +28,7 @@ export class DialogService {
       header: '系统提示',
       buttons: [
         {
-          text: '关闭',
+          text: '确定',
           role: 'cancel',
           htmlAttributes: { 'aria-label': 'close' },
         },
@@ -83,8 +83,8 @@ export class DialogService {
 
     alert.present();
 
-    const ret = await alert.onDidDismiss();
+    const { role } = await alert.onDidDismiss();
 
-    return ret.role && ret.role != 'backdrop' && ret.role != 'cancel';
+    return role && role !== 'backdrop' && role !== 'cancel';
   }
 }
