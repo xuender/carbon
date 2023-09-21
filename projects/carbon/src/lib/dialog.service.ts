@@ -28,7 +28,7 @@ export class DialogService {
       header: '系统提示',
       buttons: [
         {
-          text: '取消',
+          text: '关闭',
           role: 'cancel',
           htmlAttributes: { 'aria-label': 'close' },
         },
@@ -44,7 +44,7 @@ export class DialogService {
       header: '系统询问',
       buttons: [
         {
-          text: '确认',
+          text: '确定',
           role: 'ok',
           htmlAttributes: { 'aria-label': 'ok' },
         },
@@ -65,7 +65,7 @@ export class DialogService {
       header: '系统警告',
       buttons: [
         {
-          text: '确认',
+          text: '确定',
           role: 'destructive',
           htmlAttributes: { 'aria-label': 'delete' },
         },
