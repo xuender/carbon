@@ -38,6 +38,21 @@
         <pre>now - 1000000 | ago </pre>
       </div>
     </ion-accordion>
+    <ion-accordion value="hash">
+      <ion-item slot="header" color="light">
+        <ion-label>hash</ion-label>
+      </ion-item>
+      <div slot="content">
+        {{ 'abc' | hash }}
+        <pre>'abc' | hash</pre>
+        {{ '123' | hash }}
+        <pre>'123' | hash:'0123456789abcdef'</pre>
+        {{ 'abc' | hash:'0123456789abcdef' }}
+        <pre>'abc' | hash</pre>
+        {{ '123' | hash:'0123456789abcdef' }}
+        <pre>'123' | hash:'0123456789abcdef'</pre>
+      </div>
+    </ion-accordion>
     <ion-accordion value="second">
       <ion-item slot="header" color="light">
         <ion-label>Safe Html</ion-label>
