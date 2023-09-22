@@ -14,3 +14,4 @@ export * from './lib/popover/popover.component';
 export * from './lib/time';
 export * from './lib/hash/siphash';
 export * from './lib/fingerprint/fingerprint';
+export * from './lib/fingerprint/browser';

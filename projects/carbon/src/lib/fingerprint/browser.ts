@@ -2,13 +2,12 @@ export function Browser() {
   const timezone = new Date().getTimezoneOffset();
   const userAgent = window.navigator.userAgent;
   const platform = navigator.platform ? navigator.platform : '';
-  const languages = window.navigator.languages;
   const cookieEnabled = navigator.cookieEnabled;
   const plugins = getPlugins();
   const webdriver = window.navigator.webdriver;
   const isNaNLength = isNaN.toString().length;
 
-  return `${timezone}-${userAgent}-${platform}-${languages}-${cookieEnabled}-${plugins}-${webdriver}-${isNaNLength}`;
+  return `${timezone}-${userAgent}-${platform}-${cookieEnabled}-${plugins}-${webdriver}-${isNaNLength}`;
 }
 
 function getPlugins() {
