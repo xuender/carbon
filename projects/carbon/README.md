@@ -8,6 +8,7 @@ Ionic Angular lib.
 * MsecPipe
 * SafeHtmlPipe
 * HashPipe
+* Num2B64Pipe
 
 ## Components
 
@@ -16,7 +17,13 @@ Ionic Angular lib.
 ## Services
 
 * DialogService
+  * alert
+  * confirm
+  * danger
+  * prompt
 * PopoverService
+  * open
+  * run
 
 ## Utils
 
@@ -27,3 +34,6 @@ Ionic Angular lib.
   * string2array
   * string2key
 * Fingerprint
+* b64
+  * numToB64
+  * b64ToNum

@@ -1,4 +1,4 @@
-export function Browser() {
+export const Browser = (): string => {
   const timezone = new Date().getTimezoneOffset();
   const userAgent = window.navigator.userAgent;
   const platform = navigator.platform ? navigator.platform : '';
@@ -7,9 +7,9 @@ export function Browser() {
   const isNaNLength = isNaN.toString().length;
 
   return `${timezone}-${userAgent}-${platform}-${plugins}-${webdriver}-${isNaNLength}`;
-}
+};
 
-function getPlugins() {
+const getPlugins = (): string => {
   let plugins = '';
   let length = 0;
 
@@ -31,4 +31,4 @@ function getPlugins() {
   }
 
   return plugins;
-}
+};

@@ -15,7 +15,7 @@ import {
   imports: [CommonModule, CarbonModule, IonicModule],
 })
 export class FpPage implements OnInit {
-  fp?: number;
+  fp?: string;
   browser?: string;
   constructor() {}
   ngOnInit(): void {

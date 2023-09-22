@@ -1,4 +1,4 @@
-export function Canvas() {
+export const Canvas = (): string => {
   const canvasElement = document.createElement('canvas');
   canvasElement.hidden = true;
 
@@ -17,9 +17,9 @@ export function Canvas() {
   document.body.removeChild(canvasElement);
 
   return ret;
-}
+};
 
-function render(ctx: CanvasRenderingContext2D) {
+const render = (ctx: CanvasRenderingContext2D) => {
   const canvasFont = `20px unknown-font-${Math.floor(Math.random() * 10000)}`;
 
   ctx.beginPath();
@@ -31,4 +31,4 @@ function render(ctx: CanvasRenderingContext2D) {
   ctx.globalCompositeOperation = 'lighter';
   ctx.fillStyle = '#aaaaac';
   ctx.fillRect(100, 0, 100, 80);
-}
+};

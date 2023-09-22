@@ -19,6 +19,7 @@ npm i --save kcarbo
 * MsecPipe
 * SafeHtmlPipe
 * HashPipe
+* Num2B64Pipe
 
 ### Components
 
@@ -27,7 +28,13 @@ npm i --save kcarbo
 ### Services
 
 * DialogService
+  * alert
+  * confirm
+  * danger
+  * prompt
 * PopoverService
+  * open
+  * run
 
 ### Utils
 
@@ -38,6 +45,9 @@ npm i --save kcarbo
   * string2array
   * string2key
 * Fingerprint
+* b64
+  * numToB64
+  * b64ToNum
 
 ## 👤 Contributors
 

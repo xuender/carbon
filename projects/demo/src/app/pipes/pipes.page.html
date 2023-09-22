@@ -53,6 +53,19 @@
         <pre>'123' | hash:'0123456789abcdef'</pre>
       </div>
     </ion-accordion>
+    <ion-accordion value="num2b64">
+      <ion-item slot="header" color="light">
+        <ion-label>num2b64</ion-label>
+      </ion-item>
+      <div slot="content">
+        {{ 33333 | num2b64 }}
+        <pre>33333 | num2b64</pre>
+      </div>
+      <div slot="content">
+        {{ 9999999 | num2b64 }}
+        <pre>9999999 | num2b64</pre>
+      </div>
+    </ion-accordion>
     <ion-accordion value="second">
       <ion-item slot="header" color="light">
         <ion-label>Safe Html</ion-label>
