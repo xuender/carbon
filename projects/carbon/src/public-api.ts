@@ -1,4 +1,5 @@
 export * from './lib/carbon.module';
+export * from './lib/config';
 // service
 export * from './lib/dialog.service';
 export * from './lib/popover/popover.service';

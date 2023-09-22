@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
+import { DialogService } from 'carbon';
+import { Config } from './config';
 import { AgoPipe } from './pipes/ago.pipe';
 import { HashPipe } from './pipes/hash.pipe';
 import { MsecPipe } from './pipes/msec.pipe';
@@ -13,4 +15,11 @@ import { PopoverComponent } from './popover/popover.component';
   imports: [IonicModule, CommonModule],
   exports: [MsecPipe, SafeHtmlPipe, AgoPipe, HashPipe, PopoverComponent],
 })
-export class CarbonModule {}
+export class CarbonModule {
+  static forRoot(config: Config): ModuleWithProviders<CarbonModule> {
+    return {
+      ngModule: CarbonModule,
+      providers: [DialogService, { provide: 'carbonCfg', useValue: config }],
+    };
+  }
+}

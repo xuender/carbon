@@ -19,6 +19,11 @@ dialogService.alert(ret);</pre>
   <pre>const ret = await dialogService.danger('确认删除吗?');
 dialogService.alert(ret);</pre>
 
+  <h3>prompt</h3>
+  <ion-button (click)="prompt()">输入信息</ion-button>
+  <pre>const ret = await dialogService.prompt('请输入?');
+dialogService.alert(ret);</pre>
+
   <h3>toast</h3>
   <ion-button (click)="toast()">提示</ion-button>
   <pre>dialogService.toast('提示');</pre>
