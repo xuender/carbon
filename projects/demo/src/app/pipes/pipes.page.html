@@ -30,17 +30,32 @@
       <div slot="content">
         {{ 1694653053910 | ago }}
         <pre>1694653053910 | ago</pre>
-        {{ now + 1000| ago }}
+        {{ now + 1000 | ago }}
         <pre>now + 1000 | ago </pre>
-        {{ now + 100000| ago }}
+        {{ now + 100000 | ago }}
         <pre>now + 100000 | ago </pre>
-        {{ now - 1000000| ago }}
+        {{ now - 1000000 | ago }}
         <pre>now - 1000000 | ago </pre>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="duration">
+      <ion-item slot="header" color="light">
+        <ion-label>Duration</ion-label>
+      </ion-item>
+      <div slot="content">
+        {{ 1694653053910 | duration }}
+        <pre>1694653053910 | duration </pre>
+        {{ 1000 | duration }}
+        <pre>1000 | duration</pre>
+        {{ 100000 | duration }}
+        <pre>100000 | duration</pre>
+        {{ 1000000 | duration }}
+        <pre>1000000 | duration</pre>
       </div>
     </ion-accordion>
     <ion-accordion value="hash">
       <ion-item slot="header" color="light">
-        <ion-label>hash</ion-label>
+        <ion-label>Hash</ion-label>
       </ion-item>
       <div slot="content">
         {{ 'abc' | hash }}
@@ -55,7 +70,7 @@
     </ion-accordion>
     <ion-accordion value="num2b64">
       <ion-item slot="header" color="light">
-        <ion-label>num2b64</ion-label>
+        <ion-label>Number to Base64</ion-label>
       </ion-item>
       <div slot="content">
         {{ 33333 | num2b64 }}

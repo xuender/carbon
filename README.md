@@ -3,7 +3,7 @@
 [![Lines of code][lines-svg]][lines-url]
 [![License][license-svg]][license-url]
 
-✨ **`xuender/carbon` is a Ionic Angular lib**
+✨ **`xuender/carbon` is a Ionic Angular lib.**
 
 ## 🚀 Install
 
@@ -16,6 +16,7 @@ npm i --save kcarbo
 ### Pipes
 
 * AgoPipe
+* DurationPipe
 * MsecPipe
 * SafeHtmlPipe
 * HashPipe
