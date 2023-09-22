@@ -13,3 +13,4 @@ export * from './lib/popover/popover.component';
 // utils
 export * from './lib/time';
 export * from './lib/hash/siphash';
+export * from './lib/fingerprint/fingerprint';

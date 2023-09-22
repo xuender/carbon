@@ -7,6 +7,7 @@ Ionic Angular lib.
 * AgoPipe
 * MsecPipe
 * SafeHtmlPipe
+* HashPipe
 
 ## Components
 
@@ -20,3 +21,9 @@ Ionic Angular lib.
 ## Utils
 
 * sleep
+* hash
+  * hashNumber
+  * hashHex
+  * string2array
+  * string2key
+* Fingerprint

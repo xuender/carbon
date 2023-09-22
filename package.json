@@ -1,6 +1,23 @@
 {
   "name": "carbon",
-  "version": "0.0.6",
+  "version": "0.0.7",
+  "description": "Ionic Angular lib",
+  "keywords": [
+    "ionic",
+    "angular",
+    "lib",
+    "fingerprint",
+    "siphash"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuender/carbon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xuender/carbon/issues"
+  },
+  "homepage": "https://github.com/xuender/carbon",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

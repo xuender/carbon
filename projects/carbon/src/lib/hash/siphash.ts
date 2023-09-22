@@ -59,9 +59,12 @@ const getInt = (a: Uint8Array, offset: number) =>
   (a[offset + 1] << 8) |
   a[offset];
 
-export const hash = (m: Uint8Array | string, key: Uint32Array = keyArray) => {
-  if (typeof m === 'string') {
-    m = string2array(m);
+export const hash = (
+  data: Uint8Array | string,
+  key: Uint32Array = keyArray
+) => {
+  if (typeof data === 'string') {
+    data = string2array(data);
   }
 
   const k0 = {
@@ -82,7 +85,7 @@ export const hash = (m: Uint8Array | string, key: Uint32Array = keyArray) => {
     l: k1.l,
   };
   const v3 = k1;
-  const ml = m.length;
+  const ml = data.length;
   const ml7 = ml - 7;
   const buf = new Uint8Array(new ArrayBuffer(8));
 
@@ -106,8 +109,8 @@ export const hash = (m: Uint8Array | string, key: Uint32Array = keyArray) => {
   let mp = 0;
   while (mp < ml7) {
     const mi = {
-      h: getInt(m, mp + 4),
-      l: getInt(m, mp),
+      h: getInt(data, mp + 4),
+      l: getInt(data, mp),
     };
     xor(v3, mi);
     compress(v0, v1, v2, v3);
@@ -119,7 +122,7 @@ export const hash = (m: Uint8Array | string, key: Uint32Array = keyArray) => {
   buf[7] = ml;
   let ic = 0;
   while (mp < ml) {
-    buf[ic++] = m[mp++];
+    buf[ic++] = data[mp++];
   }
   while (ic < 7) {
     buf[ic++] = 0;

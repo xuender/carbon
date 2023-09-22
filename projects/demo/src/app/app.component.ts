@@ -15,6 +15,7 @@ export class AppComponent {
     { title: '管道', url: 'pipes', icon: 'swap-horizontal' },
     { title: '对话框', url: 'dialog', icon: 'chatbox' },
     { title: '弹出菜单', url: 'popover', icon: 'ellipsis-horizontal' },
+    { title: '指纹', url: 'fp', icon: 'finger-print' },
   ];
   constructor() {}
 }

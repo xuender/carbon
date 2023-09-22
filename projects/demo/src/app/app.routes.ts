@@ -16,6 +16,10 @@ export const routes: Routes = [
       import('./dialog/dialog.page').then((m) => m.DialogPage),
   },
   {
+    path: 'fp',
+    loadComponent: () => import('./fp/fp.page').then((m) => m.FpPage),
+  },
+  {
     path: 'popover',
     loadComponent: () =>
       import('./popover/popover.page').then((m) => m.PopoverPage),
