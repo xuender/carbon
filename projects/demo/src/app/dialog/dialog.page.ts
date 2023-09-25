@@ -32,6 +32,11 @@ export class DialogPage {
     this.dis.toast(`输入: ${ret}`);
   }
 
+  async password() {
+    const ret = await this.dis.password('请输入:');
+    this.dis.toast(`输入: ${ret}`);
+  }
+
   toast() {
     this.dis.toast(`提示`);
   }

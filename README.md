@@ -33,6 +33,8 @@ npm i --save kcarbo
   * confirm
   * danger
   * prompt
+  * password
+  * toast
 * PopoverService
   * open
   * run

@@ -3,6 +3,23 @@ import { AlertController, AlertOptions, ToastController } from '@ionic/angular';
 
 import { Config } from './config';
 
+type TextFieldTypes =
+  | 'date'
+  | 'email'
+  | 'number'
+  | 'password'
+  | 'search'
+  | 'tel'
+  | 'text'
+  | 'url'
+  | 'time'
+  | 'week'
+  | 'month'
+  | 'datetime-local'
+  | 'checkbox'
+  | 'radio'
+  | 'textarea';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -97,7 +114,8 @@ export class DialogService {
   prompt(
     message: string,
     defaultValue = '',
-    placeholder = this.cfg.placeholder
+    placeholder = this.cfg.placeholder,
+    type: TextFieldTypes = 'text'
   ) {
     return this.show({
       message,
@@ -107,7 +125,7 @@ export class DialogService {
           label: '',
           name: 'input',
           value: defaultValue,
-          type: 'text',
+          type,
           placeholder,
         },
       ],
@@ -124,6 +142,14 @@ export class DialogService {
         },
       ],
     });
+  }
+
+  password(
+    message: string,
+    defaultValue = '',
+    placeholder = this.cfg.placeholder
+  ) {
+    return this.prompt(message, defaultValue, placeholder, 'password');
   }
 
   private async show(options: AlertOptions) {

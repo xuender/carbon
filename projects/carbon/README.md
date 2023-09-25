@@ -22,6 +22,8 @@ Ionic Angular lib.
   * confirm
   * danger
   * prompt
+  * password
+  * toast
 * PopoverService
   * open
   * run
