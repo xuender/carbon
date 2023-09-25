@@ -39,16 +39,22 @@ npm i --save kcarbo
 
 ### Utils
 
-* sleep
+* time
+  * sleep
+  * minutesPassed
 * hash
   * hashNumber
   * hashHex
   * string2array
   * string2key
-* Fingerprint
+* client
+  * Fingerprint
+  * cid
 * b64
   * numToB64
   * b64ToNum
+  * longToB64
+  * b64ToLong
 
 ## 👤 Contributors
 

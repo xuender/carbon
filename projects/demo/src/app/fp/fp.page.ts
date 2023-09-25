@@ -6,6 +6,7 @@ import {
   CarbonModule,
   Fingerprint,
   Browser,
+  cid,
 } from 'projects/carbon/src/public-api';
 
 @Component({
@@ -15,11 +16,14 @@ import {
   imports: [CommonModule, CarbonModule, IonicModule],
 })
 export class FpPage implements OnInit {
-  fp?: string;
+  fp?: number;
+  cid?: string;
   browser?: string;
   constructor() {}
+
   ngOnInit(): void {
     this.fp = Fingerprint();
+    this.cid = cid();
     this.browser = Browser();
   }
 }

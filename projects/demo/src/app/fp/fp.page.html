@@ -6,9 +6,11 @@
 
 <ion-content>
   <h1>浏览器指纹: {{ fp }}</h1>
+  <h2>CID： {{ cid }}</h2>
   {{ browser }}
   <pre>
-import {{ '{' }} Fingerprint {{ '}' }} from 'kcarbon';
+import {{ '{' }} Fingerprint,cid {{ '}' }} from 'kcarbon';
 Fingerprint();
+cid();
   </pre>
 </ion-content>

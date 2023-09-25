@@ -1,37 +1,36 @@
-export const numToB64 = (num: number): string => {
-  if (num < 0) {
-    return `-${numToB64(-num)}`;
+import Long from 'long';
+
+export const longToB64 = (num: Long): string => {
+  if (num.compare(0) < 0) {
+    return `-${longToB64(num.multiply(-1))}`;
   }
 
-  let lo = num >>> 0;
-  let hi = (num / 4294967296) >>> 0;
-
-  let right = '';
-  while (hi > 0) {
-    right = b2s[0x3f & lo] + right;
-    lo >>>= 6;
-    lo |= (0x3f & hi) << 26;
-    hi >>>= 6;
-  }
-
-  let left = '';
+  let str = '';
   do {
-    left = b2s[0x3f & lo] + left;
-    lo >>>= 6;
-  } while (lo > 0);
+    str = b2s[num.and(0x3f).toInt()] + str;
+    num = num.shiftRight(6);
+  } while (num.compare(0) > 0);
 
-  return left + right;
+  return str;
 };
 
-export const b64ToNum = (str: string): number => {
-  let num = 0;
+export const b64ToLong = (str: string): Long => {
+  let num = new Long(0, 0);
   const sign = str.charAt(0) === '-' ? 1 : 0;
 
   for (let i = sign; i < str.length; i++) {
-    num = num * 64 + s2b[str.charCodeAt(i)];
+    num = num.multiply(64).add(s2b[str.charCodeAt(i)]);
   }
 
-  return sign ? -num : num;
+  return sign ? num.multiply(-1) : num;
+};
+
+export const numToB64 = (num: number): string => {
+  return longToB64(Long.fromNumber(num));
+};
+
+export const b64ToNum = (str: string): number => {
+  return b64ToLong(str).toNumber();
 };
 
 const alphabet =

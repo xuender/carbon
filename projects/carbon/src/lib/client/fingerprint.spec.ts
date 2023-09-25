@@ -12,6 +12,6 @@ describe('fingerprint', () => {
   });
 
   it('fingerprint', () => {
-    expect(Fingerprint()).not.toEqual('');
+    expect(Fingerprint()).not.toEqual(0);
   });
 });

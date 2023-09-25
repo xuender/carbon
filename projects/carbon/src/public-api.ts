@@ -15,7 +15,8 @@ export * from './lib/popover/popover-options';
 export * from './lib/popover/popover.component';
 // utils
 export * from './lib/b64/b64';
-export * from './lib/fingerprint/browser';
-export * from './lib/fingerprint/fingerprint';
+export * from './lib/client/browser';
+export * from './lib/client/cid';
+export * from './lib/client/fingerprint';
 export * from './lib/hash/siphash';
 export * from './lib/time';
