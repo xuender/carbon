@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
 import { Config } from './config';
 import { DialogService } from './dialog.service';
+import { LoaderInterceptor } from './http/loader.interceptor';
 import { AgoPipe } from './pipes/ago.pipe';
 import { DurationPipe } from './pipes/duration.pipe';
 import { HashPipe } from './pipes/hash.pipe';
@@ -37,7 +39,15 @@ export class CarbonModule {
   static forRoot(config: Config): ModuleWithProviders<CarbonModule> {
     return {
       ngModule: CarbonModule,
-      providers: [DialogService, { provide: 'carbonCfg', useValue: config }],
+      providers: [
+        {
+          provide: HTTP_INTERCEPTORS,
+          useClass: LoaderInterceptor,
+          multi: true,
+        },
+        DialogService,
+        { provide: 'carbonCfg', useValue: config },
+      ],
     };
   }
 }

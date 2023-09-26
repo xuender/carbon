@@ -28,6 +28,10 @@ Ionic Angular lib.
   * open
   * run
 
+## Interceptors
+
+* LoaderInterceptor
+
 ## Utils
 
 * time

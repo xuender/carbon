@@ -16,6 +16,7 @@ export class AppComponent {
     { title: '对话框', url: 'dialog', icon: 'chatbox' },
     { title: '弹出菜单', url: 'popover', icon: 'ellipsis-horizontal' },
     { title: '指纹', url: 'fp', icon: 'finger-print' },
+    { title: '网络', url: 'http', icon: 'globe' },
   ];
   constructor() {}
 }

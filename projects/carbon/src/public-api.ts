@@ -3,6 +3,8 @@ export * from './lib/config';
 // service
 export * from './lib/dialog.service';
 export * from './lib/popover/popover.service';
+// interceptor
+export * from './lib/http/loader.interceptor';
 // pipe
 export * from './lib/pipes/ago.pipe';
 export * from './lib/pipes/duration.pipe';

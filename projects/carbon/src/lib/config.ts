@@ -6,4 +6,8 @@ export interface Config {
     ok?: string;
     placeholder?: string;
   };
+  http?: {
+    waitMessage?: string;
+    duration?: number;
+  };
 }

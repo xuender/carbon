@@ -20,6 +20,10 @@ export const routes: Routes = [
     loadComponent: () => import('./fp/fp.page').then((m) => m.FpPage),
   },
   {
+    path: 'http',
+    loadComponent: () => import('./http/http.page').then((m) => m.HttpPage),
+  },
+  {
     path: 'popover',
     loadComponent: () =>
       import('./popover/popover.page').then((m) => m.PopoverPage),

@@ -39,6 +39,10 @@ npm i --save kcarbo
   * open
   * run
 
+## Interceptors
+
+* LoaderInterceptor
+
 ### Utils
 
 * time
