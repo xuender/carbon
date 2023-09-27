@@ -17,7 +17,7 @@ export class LoaderInterceptor implements HttpInterceptor {
   private count = 0;
   private wait = false;
   private message = '网络请求中，请稍后...';
-  private duration = 100;
+  private duration = 300;
   constructor(
     @Inject('carbonCfg') config: Config,
     private loadingCtrl: LoadingController

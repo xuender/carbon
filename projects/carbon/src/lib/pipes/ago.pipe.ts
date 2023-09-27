@@ -24,7 +24,7 @@ const times = [
 export class AgoPipe implements PipeTransform {
   transform(msec: number | undefined): string {
     if (!msec) {
-      return '未知';
+      return '';
     }
 
     let sec = (Date.now() - msec) / 1000;

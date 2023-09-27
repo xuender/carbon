@@ -2,6 +2,7 @@ export * from './lib/carbon.module';
 export * from './lib/config';
 // service
 export * from './lib/dialog.service';
+export * from './lib/pipes/pipes.service';
 export * from './lib/popover/popover.service';
 // interceptor
 export * from './lib/http/loader.interceptor';
@@ -15,6 +16,8 @@ export * from './lib/pipes/safe-html.pipe';
 // component
 export * from './lib/popover/popover-options';
 export * from './lib/popover/popover.component';
+export * from './lib/table/result';
+export * from './lib/table/table.component';
 // utils
 export * from './lib/b64/b64';
 export * from './lib/client/browser';

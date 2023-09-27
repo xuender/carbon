@@ -11,8 +11,10 @@ import { DurationPipe } from './pipes/duration.pipe';
 import { HashPipe } from './pipes/hash.pipe';
 import { MsecPipe } from './pipes/msec.pipe';
 import { Num2B64Pipe } from './pipes/num2b64.pipe';
+import { PipesService } from './pipes/pipes.service';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { PopoverComponent } from './popover/popover.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { PopoverComponent } from './popover/popover.component';
     HashPipe,
     Num2B64Pipe,
     PopoverComponent,
+    TableComponent,
   ],
   imports: [IonicModule, CommonModule],
   exports: [
@@ -33,6 +36,7 @@ import { PopoverComponent } from './popover/popover.component';
     HashPipe,
     Num2B64Pipe,
     PopoverComponent,
+    TableComponent,
   ],
 })
 export class CarbonModule {
@@ -46,6 +50,7 @@ export class CarbonModule {
           multi: true,
         },
         DialogService,
+        PipesService,
         { provide: 'carbonCfg', useValue: config },
       ],
     };

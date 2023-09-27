@@ -53,12 +53,12 @@ export class DialogService {
     await toast.present();
   }
 
-  alert(message: string) {
+  alert(message: string, header = this.cfg.header) {
     console.log(`alert: ${message}`);
 
     return this.show({
       message,
-      header: this.cfg.header,
+      header,
       buttons: [
         {
           text: this.cfg.ok,
@@ -69,12 +69,12 @@ export class DialogService {
     });
   }
 
-  confirm(message: string) {
+  confirm(message: string, header = this.cfg.header) {
     console.log(`confirm: ${message}`);
 
     return this.show({
       message,
-      header: this.cfg.header,
+      header,
       buttons: [
         {
           text: this.cfg.ok,
@@ -90,12 +90,12 @@ export class DialogService {
     });
   }
 
-  danger(message: string) {
+  danger(message: string, header = this.cfg.warn) {
     console.log(`danger: ${message}`);
 
     return this.show({
       message,
-      header: this.cfg.warn,
+      header,
       buttons: [
         {
           text: this.cfg.ok,
@@ -115,11 +115,12 @@ export class DialogService {
     message: string,
     defaultValue = '',
     placeholder = this.cfg.placeholder,
+    header = this.cfg.header,
     type: TextFieldTypes = 'text'
   ) {
     return this.show({
       message,
-      header: this.cfg.header,
+      header,
       inputs: [
         {
           label: '',
@@ -147,9 +148,10 @@ export class DialogService {
   password(
     message: string,
     defaultValue = '',
-    placeholder = this.cfg.placeholder
+    placeholder = this.cfg.placeholder,
+    header = this.cfg.header
   ) {
-    return this.prompt(message, defaultValue, placeholder, 'password');
+    return this.prompt(message, defaultValue, placeholder, header, 'password');
   }
 
   private async show(options: AlertOptions) {
