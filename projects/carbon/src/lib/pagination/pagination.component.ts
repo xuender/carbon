@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { PipesService } from '../pipes/pipes.service';
-import { TableResult } from './table.result';
+import { PaginationResult } from './pagination.result';
 
 interface Button {
   icon?: string;
@@ -17,11 +17,11 @@ interface Field {
 }
 
 @Component({
-  selector: 'car-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css'],
+  selector: 'car-pagination',
+  templateUrl: './pagination.component.html',
+  styleUrls: ['./pagination.component.css'],
 })
-export class TableComponent {
+export class PaginationComponent {
   @Input()
   size = 10;
   @Input()
@@ -37,7 +37,7 @@ export class TableComponent {
   }
 
   private funcs = new Map<string, string[]>();
-  private _res?: TableResult;
+  private _res?: PaginationResult;
   constructor(private pipesServ: PipesService) {}
 
   to(offset: number) {
@@ -61,7 +61,7 @@ export class TableComponent {
     return val;
   }
 
-  set data(data: TableResult) {
+  set data(data: PaginationResult) {
     this._res = data;
 
     if (this.cols) {
@@ -115,10 +115,6 @@ export class TableComponent {
     this.start = this._res.offset + this._res.data.length;
     if (this.start > this._res.count) {
       this.start = this._res.count;
-    }
-
-    for (let i = this._res.data.length; i < this._res.limit; i++) {
-      this._res.data.push({});
     }
 
     let pages = Math.ceil(this._res.count / this._res.limit);

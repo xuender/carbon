@@ -6,13 +6,5 @@
       </ion-label>
     </ion-col>
   </ion-item>
-  <ion-item>
-    <ion-buttons slot="end">
-      <ion-badge color="light">{{ start }} / {{ data.count }}</ion-badge>
-      <ion-button *ngFor="let b of buttons" [disabled]="b.disabled" (click)="to(b.offset)">
-        <ion-icon *ngIf="b.icon" [name]="b.icon+'-outline'" slot="start"></ion-icon>
-        <ion-badge *ngIf="b.num" color="light">{{ b.num }}</ion-badge>
-      </ion-button>
-    </ion-buttons>
-  </ion-item>
+  <car-pagination [data]="data" (turn)="to($event)"></car-pagination>
 </ion-list>

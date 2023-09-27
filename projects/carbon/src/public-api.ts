@@ -14,10 +14,12 @@ export * from './lib/pipes/msec.pipe';
 export * from './lib/pipes/num2b64.pipe';
 export * from './lib/pipes/safe-html.pipe';
 // component
+export * from './lib/pagination/pagination.component';
+export * from './lib/pagination/pagination.result';
 export * from './lib/popover/popover-options';
 export * from './lib/popover/popover.component';
-export * from './lib/table/result';
 export * from './lib/table/table.component';
+export * from './lib/table/table.result';
 // utils
 export * from './lib/b64/b64';
 export * from './lib/client/browser';

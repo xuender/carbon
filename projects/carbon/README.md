@@ -14,6 +14,7 @@ Ionic Angular lib.
 ## Components
 
 * PopoverComponent
+* PaginationComponent
 
 ## Services
 

@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { Config } from './config';
 import { DialogService } from './dialog.service';
 import { LoaderInterceptor } from './http/loader.interceptor';
+import { PaginationComponent } from './pagination/pagination.component';
 import { AgoPipe } from './pipes/ago.pipe';
 import { DurationPipe } from './pipes/duration.pipe';
 import { HashPipe } from './pipes/hash.pipe';
@@ -26,6 +27,7 @@ import { TableComponent } from './table/table.component';
     Num2B64Pipe,
     PopoverComponent,
     TableComponent,
+    PaginationComponent,
   ],
   imports: [IonicModule, CommonModule],
   exports: [
@@ -37,6 +39,7 @@ import { TableComponent } from './table/table.component';
     Num2B64Pipe,
     PopoverComponent,
     TableComponent,
+    PaginationComponent,
   ],
 })
 export class CarbonModule {
