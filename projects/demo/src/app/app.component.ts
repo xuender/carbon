@@ -17,6 +17,7 @@ export class AppComponent {
     { title: '弹出菜单', url: 'popover', icon: 'ellipsis-horizontal' },
     { title: '指纹', url: 'fp', icon: 'finger-print' },
     { title: '网络', url: 'http', icon: 'globe' },
+    { title: '翻页', url: 'pagination', icon: 'code-working' },
     { title: '表格', url: 'table', icon: 'apps' },
   ];
   constructor() {}

@@ -26,6 +26,8 @@ export class PaginationComponent {
   size = 10;
   @Input()
   cols = '';
+  @Input()
+  url = '';
   @Output()
   turn: EventEmitter<number> = new EventEmitter();
   buttons: Button[] = [];

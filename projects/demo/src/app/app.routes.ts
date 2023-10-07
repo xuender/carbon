@@ -28,6 +28,11 @@ export const routes: Routes = [
     loadComponent: () => import('./table/table.page').then((m) => m.TablePage),
   },
   {
+    path: 'pagination',
+    loadComponent: () =>
+      import('./pagination/pagination.page').then((m) => m.PaginationPage),
+  },
+  {
     path: 'popover',
     loadComponent: () =>
       import('./popover/popover.page').then((m) => m.PopoverPage),

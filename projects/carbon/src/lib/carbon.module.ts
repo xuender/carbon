@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { Config } from './config';
@@ -29,7 +30,7 @@ import { TableComponent } from './table/table.component';
     TableComponent,
     PaginationComponent,
   ],
-  imports: [IonicModule, CommonModule],
+  imports: [IonicModule, CommonModule, RouterLink],
   exports: [
     MsecPipe,
     SafeHtmlPipe,

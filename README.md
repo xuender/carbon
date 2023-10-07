@@ -25,6 +25,7 @@ npm i --save kcarbo
 ### Components
 
 * PopoverComponent
+* PaginationComponent
 
 ### Services
 
