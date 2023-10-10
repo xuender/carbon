@@ -15,32 +15,35 @@ import { MsecPipe } from './pipes/msec.pipe';
 import { Num2B64Pipe } from './pipes/num2b64.pipe';
 import { PipesService } from './pipes/pipes.service';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { StoragePipe } from './pipes/storage.pipe';
 import { PopoverComponent } from './popover/popover.component';
 import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
-    MsecPipe,
-    SafeHtmlPipe,
+    PaginationComponent,
     AgoPipe,
     DurationPipe,
     HashPipe,
+    MsecPipe,
     Num2B64Pipe,
+    SafeHtmlPipe,
+    StoragePipe,
     PopoverComponent,
     TableComponent,
-    PaginationComponent,
   ],
   imports: [IonicModule, CommonModule, RouterLink],
   exports: [
-    MsecPipe,
-    SafeHtmlPipe,
+    PaginationComponent,
     AgoPipe,
     DurationPipe,
     HashPipe,
+    MsecPipe,
     Num2B64Pipe,
+    SafeHtmlPipe,
+    StoragePipe,
     PopoverComponent,
     TableComponent,
-    PaginationComponent,
   ],
 })
 export class CarbonModule {

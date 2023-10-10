@@ -18,6 +18,7 @@ npm i --save kcarbo
 * AgoPipe
 * DurationPipe
 * MsecPipe
+* StoragePipe
 * SafeHtmlPipe
 * HashPipe
 * Num2B64Pipe

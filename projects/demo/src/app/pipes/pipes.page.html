@@ -17,10 +17,19 @@
         <ion-label>Msec</ion-label>
       </ion-item>
       <div slot="content">
-        {{ 1694653053910 | msec}}
+        {{ 1694653053910 | msec }}
         <pre>1694653053910 | msec</pre>
         {{ 1694653053910 | msec:'yyyy'}}
         <pre>1694653053910 | msec:'yyyy'</pre>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="storage">
+      <ion-item slot="header" color="light">
+        <ion-label>Storage</ion-label>
+      </ion-item>
+      <div slot="content">
+        {{ 1694653053910 | storage }}
+        <pre>1694653053910 | storage </pre>
       </div>
     </ion-accordion>
     <ion-accordion value="ago">

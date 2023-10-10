@@ -13,6 +13,7 @@ export * from './lib/pipes/hash.pipe';
 export * from './lib/pipes/msec.pipe';
 export * from './lib/pipes/num2b64.pipe';
 export * from './lib/pipes/safe-html.pipe';
+export * from './lib/pipes/storage.pipe';
 // component
 export * from './lib/pagination/pagination.component';
 export * from './lib/pagination/pagination.result';

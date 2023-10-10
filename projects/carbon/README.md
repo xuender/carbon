@@ -7,6 +7,7 @@ Ionic Angular lib.
 * AgoPipe
 * DurationPipe
 * MsecPipe
+* StoragePipe
 * SafeHtmlPipe
 * HashPipe
 * Num2B64Pipe

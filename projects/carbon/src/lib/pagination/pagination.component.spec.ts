@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
 import { PaginationComponent } from './pagination.component';
 
@@ -9,6 +10,7 @@ describe('PaginationComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [PaginationComponent],
+      imports: [IonicModule],
     });
     fixture = TestBed.createComponent(PaginationComponent);
     component = fixture.componentInstance;
