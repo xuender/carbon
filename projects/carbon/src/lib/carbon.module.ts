@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
 
 import { Config } from './config';
 import { DialogService } from './dialog.service';
@@ -32,7 +31,7 @@ import { TableComponent } from './table/table.component';
     PopoverComponent,
     TableComponent,
   ],
-  imports: [IonicModule, CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink],
   exports: [
     PaginationComponent,
     AgoPipe,

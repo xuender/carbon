@@ -1,5 +1,13 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import {
+  IonBackButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonMenuButton,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 
 import {
   CarbonModule,
@@ -14,7 +22,16 @@ const data = [item, item, item, item, item, item, item, item, item, item];
   selector: 'car-table-page',
   templateUrl: './table.page.html',
   standalone: true,
-  imports: [CarbonModule, IonicModule],
+  imports: [
+    CarbonModule,
+    IonHeader,
+    IonToolbar,
+    IonButtons,
+    IonMenuButton,
+    IonBackButton,
+    IonTitle,
+    IonContent,
+  ],
 })
 export class TablePage {
   res1: TableResult = { limit: 10, count: 0, offset: 0, data: [] };

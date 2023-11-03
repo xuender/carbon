@@ -1,7 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
+import {
+  IonBackButton,
+  IonButtons,
+  IonContent,
+  IonFooter,
+  IonHeader,
+  IonItem,
+  IonList,
+  IonMenuButton,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 
 import { CarbonModule, TableResult } from 'projects/carbon/src/public-api';
 
@@ -9,7 +20,20 @@ import { CarbonModule, TableResult } from 'projects/carbon/src/public-api';
   selector: 'car-table-page',
   templateUrl: './pagination.page.html',
   standalone: true,
-  imports: [CarbonModule, IonicModule, CommonModule],
+  imports: [
+    CarbonModule,
+    CommonModule,
+    IonHeader,
+    IonToolbar,
+    IonButtons,
+    IonMenuButton,
+    IonBackButton,
+    IonTitle,
+    IonContent,
+    IonList,
+    IonItem,
+    IonFooter,
+  ],
 })
 export class PaginationPage {
   res: TableResult = {

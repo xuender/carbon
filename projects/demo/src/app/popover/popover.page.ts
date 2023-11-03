@@ -1,5 +1,18 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonMenuButton,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 
 import { PopoverService } from 'projects/carbon/src/lib/popover/popover.service';
 import {
@@ -12,7 +25,21 @@ import {
   selector: 'car-popover-page',
   templateUrl: './popover.page.html',
   standalone: true,
-  imports: [CarbonModule, IonicModule],
+  imports: [
+    CarbonModule,
+    IonHeader,
+    IonToolbar,
+    IonButtons,
+    IonMenuButton,
+    IonBackButton,
+    IonTitle,
+    IonButton,
+    IonIcon,
+    IonContent,
+    IonList,
+    IonItem,
+    IonLabel,
+  ],
 })
 export class PopoverPage {
   private count = 100;

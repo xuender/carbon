@@ -1,12 +1,39 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
+import {
+  IonApp,
+  IonContent,
+  IonIcon,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonMenu,
+  IonMenuToggle,
+  IonNote,
+  IonRouterOutlet,
+  IonSplitPane,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'car-root',
   standalone: true,
-  imports: [CommonModule, IonicModule, RouterLink, RouterLinkActive],
+  imports: [
+    CommonModule,
+    RouterLink,
+    RouterLinkActive,
+    IonApp,
+    IonSplitPane,
+    IonMenu,
+    IonContent,
+    IonList,
+    IonListHeader,
+    IonNote,
+    IonMenuToggle,
+    IonIcon,
+    IonLabel,
+    IonRouterOutlet,
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
