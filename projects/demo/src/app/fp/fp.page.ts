@@ -1,11 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import {
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 
 import {
+  Browser,
   CarbonModule,
   Fingerprint,
-  Browser,
   cid,
 } from 'projects/carbon/src/public-api';
 
@@ -13,7 +18,14 @@ import {
   selector: 'car-fp-page',
   templateUrl: './fp.page.html',
   standalone: true,
-  imports: [CommonModule, CarbonModule, IonicModule],
+  imports: [
+    CommonModule,
+    CarbonModule,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+  ],
 })
 export class FpPage implements OnInit {
   fp?: number;

@@ -1,5 +1,14 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import {
+  IonAccordion,
+  IonAccordionGroup,
+  IonContent,
+  IonHeader,
+  IonItem,
+  IonLabel,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 
 import { CarbonModule } from 'projects/carbon/src/public-api';
 
@@ -7,7 +16,17 @@ import { CarbonModule } from 'projects/carbon/src/public-api';
   selector: 'car-pipes-page',
   templateUrl: './pipes.page.html',
   standalone: true,
-  imports: [CarbonModule, IonicModule],
+  imports: [
+    CarbonModule,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonAccordion,
+    IonAccordionGroup,
+    IonItem,
+    IonLabel,
+  ],
 })
 export class PipesPage {
   now = Date.now();

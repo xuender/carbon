@@ -1,11 +1,37 @@
 import { Component } from '@angular/core';
-import { NavParams, PopoverController } from '@ionic/angular';
+import {
+  IonBadge,
+  IonCheckbox,
+  IonContent,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonPopover,
+  NavParams,
+  PopoverController,
+} from '@ionic/angular/standalone';
+import { CommonModule } from '@angular/common';
 
 import { PopoverItem, PopoverOptions } from './popover-options';
 
 @Component({
   selector: 'car-popover',
   templateUrl: './popover.component.html',
+  standalone: true,
+  imports: [
+    IonContent,
+    IonList,
+    IonListHeader,
+    IonItem,
+    IonIcon,
+    IonLabel,
+    IonBadge,
+    IonCheckbox,
+    IonPopover,
+    CommonModule,
+  ],
 })
 export class PopoverComponent {
   options: PopoverOptions;

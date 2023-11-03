@@ -1,4 +1,20 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import {
+  IonBadge,
+  IonButton,
+  IonButtons,
+  IonIcon,
+  IonItem,
+} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import {
+  chevronBackOutline,
+  chevronForwardOutline,
+  playSkipBackOutline,
+  playSkipForwardOutline,
+} from 'ionicons/icons';
 
 import { PipesService } from '../pipes/pipes.service';
 import { PaginationResult } from './pagination.result';
@@ -20,6 +36,16 @@ interface Field {
   selector: 'car-pagination',
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.css'],
+  standalone: true,
+  imports: [
+    IonItem,
+    IonButtons,
+    IonBadge,
+    IonButton,
+    IonIcon,
+    CommonModule,
+    RouterLink,
+  ],
 })
 export class PaginationComponent {
   @Input()
@@ -40,7 +66,14 @@ export class PaginationComponent {
 
   private funcs = new Map<string, string[]>();
   private _res?: PaginationResult;
-  constructor(private pipesServ: PipesService) {}
+  constructor(private pipesServ: PipesService) {
+    addIcons({
+      playSkipBackOutline,
+      chevronBackOutline,
+      chevronForwardOutline,
+      playSkipForwardOutline,
+    });
+  }
 
   to(offset: number) {
     this.turn.emit(offset);

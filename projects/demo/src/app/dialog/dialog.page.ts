@@ -1,6 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import {
+  IonButton,
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 
 import { CarbonModule, DialogService } from 'projects/carbon/src/public-api';
 
@@ -8,7 +14,15 @@ import { CarbonModule, DialogService } from 'projects/carbon/src/public-api';
   selector: 'car-dialog-page',
   templateUrl: './dialog.page.html',
   standalone: true,
-  imports: [CommonModule, CarbonModule, IonicModule],
+  imports: [
+    CommonModule,
+    CarbonModule,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonButton,
+  ],
 })
 export class DialogPage {
   constructor(private dis: DialogService) {}

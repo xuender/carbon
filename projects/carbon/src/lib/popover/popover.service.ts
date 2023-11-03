@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PopoverController } from '@ionic/angular';
+import { PopoverController } from '@ionic/angular/standalone';
 
 import { PopoverOptions } from './popover-options';
 import { PopoverComponent } from './popover.component';

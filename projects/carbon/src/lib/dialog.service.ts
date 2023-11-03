@@ -1,5 +1,9 @@
 import { Inject, Injectable } from '@angular/core';
-import { AlertController, AlertOptions, ToastController } from '@ionic/angular';
+import {
+  AlertController,
+  AlertOptions,
+  ToastController,
+} from '@ionic/angular/standalone';
 
 import { Config } from './config';
 

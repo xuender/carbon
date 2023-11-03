@@ -1,8 +1,17 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import {
+  IonBackButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonMenuButton,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 
 import {
   CarbonModule,
+  TableComponent,
   TableResult,
   sleep,
 } from 'projects/carbon/src/public-api';
@@ -14,7 +23,17 @@ const data = [item, item, item, item, item, item, item, item, item, item];
   selector: 'car-table-page',
   templateUrl: './table.page.html',
   standalone: true,
-  imports: [CarbonModule, IonicModule],
+  imports: [
+    CarbonModule,
+    IonHeader,
+    IonToolbar,
+    IonButtons,
+    IonMenuButton,
+    IonBackButton,
+    IonTitle,
+    IonContent,
+    TableComponent,
+  ],
 })
 export class TablePage {
   res1: TableResult = { limit: 10, count: 0, offset: 0, data: [] };

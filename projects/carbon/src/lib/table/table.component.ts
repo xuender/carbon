@@ -1,5 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IonCol, IonItem, IonLabel, IonList } from '@ionic/angular/standalone';
 
+import { PaginationComponent } from '../pagination/pagination.component';
 import { PipesService } from '../pipes/pipes.service';
 import { TableResult } from './table.result';
 
@@ -20,6 +23,15 @@ interface Field {
   selector: 'car-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
+  standalone: true,
+  imports: [
+    IonList,
+    IonItem,
+    IonCol,
+    IonLabel,
+    CommonModule,
+    PaginationComponent,
+  ],
 })
 export class TableComponent {
   @Input()
