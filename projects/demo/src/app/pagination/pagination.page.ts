@@ -14,7 +14,11 @@ import {
   IonToolbar,
 } from '@ionic/angular/standalone';
 
-import { CarbonModule, TableResult } from 'projects/carbon/src/public-api';
+import {
+  CarbonModule,
+  PaginationComponent,
+  TableResult,
+} from 'projects/carbon/src/public-api';
 
 @Component({
   selector: 'car-table-page',
@@ -33,6 +37,7 @@ import { CarbonModule, TableResult } from 'projects/carbon/src/public-api';
     IonList,
     IonItem,
     IonFooter,
+    PaginationComponent,
   ],
 })
 export class PaginationPage {

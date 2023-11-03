@@ -11,6 +11,7 @@ import {
 
 import {
   CarbonModule,
+  TableComponent,
   TableResult,
   sleep,
 } from 'projects/carbon/src/public-api';
@@ -31,6 +32,7 @@ const data = [item, item, item, item, item, item, item, item, item, item];
     IonBackButton,
     IonTitle,
     IonContent,
+    TableComponent,
   ],
 })
 export class TablePage {
