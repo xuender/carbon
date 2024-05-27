@@ -1,6 +1,6 @@
 {
   "name": "kcarbon",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Ionic Angular lib",
   "keywords": [
     "ionic",
@@ -22,8 +22,8 @@
     "@angular/common": ">=16.2.0",
     "@angular/core": ">=16.2.0",
     "@ionic/angular": ">=7.5.3",
-    "long": "^5.2.3",
-    "date-fns": ">=2.30.0"
+    "date-fns": ">=2.30.0",
+    "long": "^5.2.3"
   },
   "dependencies": {
     "tslib": "^2.3.0"

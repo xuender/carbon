@@ -1,4 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import Long from 'long';
+
+import { toNumber } from './long';
 
 const times = [
   [60, '秒', 1], // 60
@@ -22,12 +25,8 @@ const times = [
   name: 'ago',
 })
 export class AgoPipe implements PipeTransform {
-  transform(msec: number | undefined): string {
-    if (!msec) {
-      return '';
-    }
-
-    let sec = (Date.now() - msec) / 1000;
+  transform(msec: number | Long | null | undefined): string {
+    let sec = (Date.now() - toNumber(msec)) / 1000;
     let last = '前';
     let idx = 1;
 
