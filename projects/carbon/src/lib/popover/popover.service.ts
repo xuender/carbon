@@ -28,6 +28,8 @@ export class PopoverService {
   }
 
   async run<T>(target: any, item: T, event: Event, options: PopoverOptions) {
+    event.stopPropagation();
+
     const data = await this.open(event, options);
     if (!data) {
       return;
