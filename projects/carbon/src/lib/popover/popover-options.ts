@@ -12,5 +12,7 @@ export interface PopoverItem {
   itemColor?: string;
   iconColor?: string;
   badge?: number;
+  /** 隐藏 */
+  hide?: boolean;
   children?: PopoverItem[];
 }
