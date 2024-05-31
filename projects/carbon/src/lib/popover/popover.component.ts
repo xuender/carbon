@@ -38,7 +38,7 @@ export class PopoverComponent {
   parent: PopoverItem[] = [];
   constructor(
     private navParams: NavParams,
-    private popoverCtrl: PopoverController
+    private popoverCtrl: PopoverController,
   ) {
     this.options = this.navParams.data['options'];
 
@@ -58,6 +58,6 @@ export class PopoverComponent {
       return;
     }
 
-    this.popoverCtrl.dismiss(item.code);
+    this.popoverCtrl.dismiss(item);
   }
 }

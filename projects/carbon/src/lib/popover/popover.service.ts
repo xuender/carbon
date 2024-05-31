@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PopoverController } from '@ionic/angular/standalone';
 
-import { PopoverOptions } from './popover-options';
+import { PopoverItem, PopoverOptions } from './popover-options';
 import { PopoverComponent } from './popover.component';
 
 @Injectable({
@@ -22,7 +22,7 @@ export class PopoverService {
 
     popover.present();
 
-    const { data } = await popover.onDidDismiss();
+    const { data } = await popover.onDidDismiss<PopoverItem>();
 
     return data;
   }
@@ -35,10 +35,14 @@ export class PopoverService {
       return;
     }
 
-    if (!target[data]) {
+    if (!target[data.code]) {
       return;
     }
 
-    target[data](item);
+    if (target[data.code].length > 1) {
+      target[data.code](item, data.data);
+    } else {
+      target[data.code](item);
+    }
   }
 }

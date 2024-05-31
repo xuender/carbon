@@ -6,6 +6,7 @@ export interface PopoverOptions {
 export interface PopoverItem {
   label: string;
   code: string;
+  data?: any;
   checked?: boolean;
   icon?: string;
   color?: string;

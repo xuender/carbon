@@ -46,7 +46,7 @@ export class PopoverPage {
   private select = true;
   constructor(
     private popoverServ: PopoverService,
-    private dialogServ: DialogService
+    private dialogServ: DialogService,
   ) {}
 
   async open(event: Event) {
@@ -91,16 +91,16 @@ export class PopoverPage {
       },
     ];
 
-    const code = await this.popoverServ.open(event, {
+    const item = await this.popoverServ.open(event, {
       title: '更多功能',
       items,
     });
 
-    if (!code) {
+    if (!item) {
       return;
     }
 
-    switch (code) {
+    switch (item.code) {
       case 'count1':
         this.count++;
 
@@ -114,7 +114,7 @@ export class PopoverPage {
 
         break;
       default:
-        this.dialogServ.toast(`点击: ${code}`);
+        this.dialogServ.toast(`点击: ${item.code}`);
     }
   }
 }
