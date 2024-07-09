@@ -38,7 +38,7 @@ export class DialogService {
   constructor(
     @Inject('carbonCfg') config: Config,
     private alertCtrl: AlertController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
   ) {
     if (config && config.dialog) {
       Object.assign(this.cfg, config.dialog);
@@ -49,7 +49,7 @@ export class DialogService {
     const toast = await this.toastCtrl.create({
       message,
       duration: 1500,
-      position: 'top',
+      position: 'bottom',
       mode: 'ios',
       color: 'dark',
     });
@@ -120,7 +120,7 @@ export class DialogService {
     defaultValue = '',
     placeholder = this.cfg.placeholder,
     header = this.cfg.header,
-    type: TextFieldTypes = 'text'
+    type: TextFieldTypes = 'text',
   ) {
     return this.show({
       message,
@@ -153,7 +153,7 @@ export class DialogService {
     message: string,
     defaultValue = '',
     placeholder = this.cfg.placeholder,
-    header = this.cfg.header
+    header = this.cfg.header,
   ) {
     return this.prompt(message, defaultValue, placeholder, header, 'password');
   }
