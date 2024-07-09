@@ -48,7 +48,7 @@ export class DialogService {
   async toast(message: string) {
     const toast = await this.toastCtrl.create({
       message,
-      duration: 1500,
+      duration: 1400,
       position: 'bottom',
       mode: 'ios',
       color: 'dark',
