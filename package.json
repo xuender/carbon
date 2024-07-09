@@ -1,6 +1,6 @@
 {
   "name": "carbon",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "Ionic Angular lib",
   "keywords": [
     "ionic",
@@ -26,7 +26,6 @@
     "test": "ng test",
     "lint": "ng lint"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^16.2.0",
     "@angular/common": "^16.2.0",
