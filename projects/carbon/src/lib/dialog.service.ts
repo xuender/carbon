@@ -216,7 +216,7 @@ export class DialogService {
       return null;
     }
 
-    if (ret && data && data.values) {
+    if (ret && data && data.values != undefined) {
       return data.values;
     }
 
