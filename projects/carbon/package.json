@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/xuender/carbon",
   "peerDependencies": {
-    "@angular/common": ">=16.2.0",
-    "@angular/core": ">=16.2.0",
-    "@ionic/angular": ">=7.5.3",
+    "@angular/common": ">=18.0.0",
+    "@angular/compiler": ">=18.0.0",
+    "@angular/core": ">=18.0.0",
+    "@ionic/angular": ">=8.0.0",
+    "@angular/forms": ">=18.0.0",
     "date-fns": ">=2.30.0",
     "long": "^5.2.3"
   },

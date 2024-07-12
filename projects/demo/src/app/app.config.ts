@@ -16,7 +16,7 @@ export const appConfig: ApplicationConfig = {
       CarbonModule.forRoot({
         dialog: { header: '测试提示' },
         http: { waitMessage: '不要急慢慢来' },
-      })
+      }),
     ),
     provideIonicAngular(),
     provideRouter(routes),

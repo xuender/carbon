@@ -14,12 +14,28 @@ import {
   IonRouterOutlet,
   IonSplitPane,
 } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import {
+  appsOutline,
+  appsSharp,
+  chatboxOutline,
+  chatboxSharp,
+  codeWorkingOutline,
+  codeWorkingSharp,
+  ellipsisHorizontalOutline,
+  ellipsisHorizontalSharp,
+  fingerPrintOutline,
+  fingerPrintSharp,
+  globeOutline,
+  globeSharp,
+  swapHorizontalOutline,
+  swapHorizontalSharp,
+} from 'ionicons/icons';
 
 @Component({
   selector: 'car-root',
   standalone: true,
   imports: [
-    CommonModule,
     RouterLink,
     RouterLinkActive,
     IonApp,
@@ -33,6 +49,7 @@ import {
     IonIcon,
     IonLabel,
     IonRouterOutlet,
+    CommonModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -47,5 +64,22 @@ export class AppComponent {
     { title: '翻页', url: 'pagination', icon: 'code-working' },
     { title: '表格', url: 'table', icon: 'apps' },
   ];
-  constructor() {}
+  constructor() {
+    addIcons({
+      swapHorizontalOutline,
+      swapHorizontalSharp,
+      chatboxOutline,
+      chatboxSharp,
+      ellipsisHorizontalOutline,
+      ellipsisHorizontalSharp,
+      fingerPrintOutline,
+      fingerPrintSharp,
+      globeOutline,
+      globeSharp,
+      codeWorkingOutline,
+      codeWorkingSharp,
+      appsOutline,
+      appsSharp,
+    });
+  }
 }

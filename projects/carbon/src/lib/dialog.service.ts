@@ -58,8 +58,6 @@ export class DialogService {
   }
 
   alert(message: string, header = this.cfg.header) {
-    console.log(`alert: ${message}`);
-
     return this.show({
       message,
       header,
@@ -74,8 +72,6 @@ export class DialogService {
   }
 
   confirm(message: string, header = this.cfg.header) {
-    console.log(`confirm: ${message}`);
-
     return this.show({
       message,
       header,
@@ -95,8 +91,6 @@ export class DialogService {
   }
 
   danger(message: string, header = this.cfg.warn) {
-    console.log(`danger: ${message}`);
-
     return this.show({
       message,
       header,
