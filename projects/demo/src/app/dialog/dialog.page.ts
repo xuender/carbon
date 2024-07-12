@@ -54,4 +54,12 @@ export class DialogPage {
   toast() {
     this.dis.toast(`提示`);
   }
+
+  async select() {
+    const ret = await this.dis.select('请选择', [
+      { label: '选项1', key: 1 },
+      { label: '选项2', key: 2 },
+    ]);
+    this.dis.toast(`选择: ${ret}`);
+  }
 }

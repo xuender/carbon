@@ -11,23 +11,37 @@
 
   <h3>confirm</h3>
   <ion-button (click)="confirm()">询问信息</ion-button>
-  <pre>const ret = await dialogService.confirm('是否xxx吗?');
-dialogService.alert(ret);</pre>
+  <pre>
+const ret = await dialogService.confirm('是否xxx吗?');
+dialogService.alert(ret);</pre
+  >
 
   <h3>danger</h3>
   <ion-button (click)="danger()">警告信息</ion-button>
-  <pre>const ret = await dialogService.danger('确认删除吗?');
-dialogService.alert(ret);</pre>
+  <pre>
+const ret = await dialogService.danger('确认删除吗?');
+dialogService.alert(ret);</pre
+  >
 
   <h3>prompt</h3>
   <ion-button (click)="prompt()">输入信息</ion-button>
-  <pre>const ret = await dialogService.prompt('请输入?');
-dialogService.alert(ret);</pre>
+  <pre>
+const ret = await dialogService.prompt('请输入?');
+dialogService.alert(ret);</pre
+  >
 
   <h3>password</h3>
   <ion-button (click)="password()">输入密码</ion-button>
-  <pre>const ret = await dialogService.password('请输入?');
-dialogService.alert(ret);</pre>
+  <pre>
+const ret = await dialogService.password('请输入?');
+dialogService.alert(ret);</pre
+  >
+
+  <h3>select</h3>
+  <ion-button (click)="select()">选择</ion-button>
+  <pre>
+dialogService.select('%E9%80%89%E6%8B%A9',%5B%7Blabel:'a',key:1%7D,%7Blabel:'b',key:2%7D%5D);</pre
+  >
 
   <h3>toast</h3>
   <ion-button (click)="toast()">提示</ion-button>

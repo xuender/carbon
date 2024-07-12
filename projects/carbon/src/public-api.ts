@@ -2,6 +2,7 @@ export * from './lib/carbon.module';
 export * from './lib/config';
 // service
 export * from './lib/dialog.service';
+export * from './lib/option';
 export * from './lib/pipes/pipes.service';
 export * from './lib/popover/popover.service';
 // interceptor

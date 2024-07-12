@@ -13,6 +13,8 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { ellipsisHorizontal } from 'ionicons/icons';
 
 import { PopoverService } from 'projects/carbon/src/lib/popover/popover.service';
 import {
@@ -47,7 +49,9 @@ export class PopoverPage {
   constructor(
     private popoverServ: PopoverService,
     private dialogServ: DialogService,
-  ) {}
+  ) {
+    addIcons({ ellipsisHorizontal });
+  }
 
   async open(event: Event) {
     const items: PopoverItem[] = [

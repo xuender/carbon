@@ -1,10 +1,14 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { RouteReuseStrategy, provideRouter } from '@angular/router';
+import {
+  ApplicationConfig,
+  importProvidersFrom,
+  provideZoneChangeDetection,
+} from '@angular/core';
+import { provideRouter, RouteReuseStrategy } from '@angular/router';
+
 import {
   IonicRouteStrategy,
   provideIonicAngular,
 } from '@ionic/angular/standalone';
-
 import { CarbonModule } from 'projects/carbon/src/public-api';
 import { routes } from './app.routes';
 
@@ -18,6 +22,7 @@ export const appConfig: ApplicationConfig = {
         http: { waitMessage: '不要急慢慢来' },
       }),
     ),
+    provideZoneChangeDetection({ eventCoalescing: true }),
     provideIonicAngular(),
     provideRouter(routes),
   ],

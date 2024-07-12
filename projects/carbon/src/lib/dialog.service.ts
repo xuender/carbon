@@ -1,11 +1,13 @@
 import { Inject, Injectable } from '@angular/core';
 import {
   AlertController,
+  AlertInput,
   AlertOptions,
   ToastController,
 } from '@ionic/angular/standalone';
 
 import { Config } from './config';
+import { Option } from './option';
 
 type TextFieldTypes =
   | 'date'
@@ -152,6 +154,36 @@ export class DialogService {
     return this.prompt(message, defaultValue, placeholder, header, 'password');
   }
 
+  select<T>(message: string, options: Option<T>[], header = this.cfg.header) {
+    const inputs: AlertInput[] = [];
+    for (const option of options) {
+      inputs.push({
+        label: option.label,
+        name: 'input',
+        value: option.key,
+        type: 'radio',
+      });
+    }
+
+    return this.show({
+      message,
+      header,
+      inputs,
+      buttons: [
+        {
+          text: this.cfg.ok,
+          role: 'ok',
+          htmlAttributes: { 'aria-label': 'ok' },
+        },
+        {
+          text: this.cfg.cancel,
+          role: 'cancel',
+          htmlAttributes: { 'aria-label': 'close' },
+        },
+      ],
+    });
+  }
+
   private async show(options: AlertOptions) {
     const alert = await this.alertCtrl.create(options);
     await alert.present();
@@ -176,6 +208,10 @@ export class DialogService {
       }
 
       return null;
+    }
+
+    if (data && data.values) {
+      return data.values;
     }
 
     return ret;
