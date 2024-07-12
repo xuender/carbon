@@ -154,7 +154,12 @@ export class DialogService {
     return this.prompt(message, defaultValue, placeholder, header, 'password');
   }
 
-  select<T>(message: string, options: Option<T>[], header = this.cfg.header) {
+  select<T>(
+    message: string,
+    defaultValue: T,
+    options: Option<T>[],
+    header = this.cfg.header,
+  ) {
     const inputs: AlertInput[] = [];
     for (const option of options) {
       inputs.push({
@@ -162,6 +167,7 @@ export class DialogService {
         name: 'input',
         value: option.key,
         type: 'radio',
+        checked: option.key === defaultValue,
       });
     }
 
@@ -210,7 +216,7 @@ export class DialogService {
       return null;
     }
 
-    if (data && data.values) {
+    if (ret && data && data.values) {
       return data.values;
     }
 

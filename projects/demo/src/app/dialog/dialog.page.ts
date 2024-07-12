@@ -56,7 +56,7 @@ export class DialogPage {
   }
 
   async select() {
-    const ret = await this.dis.select('请选择', [
+    const ret = await this.dis.select('请选择', 2, [
       { label: '选项1', key: 1 },
       { label: '选项2', key: 2 },
     ]);
