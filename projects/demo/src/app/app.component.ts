@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import {
@@ -48,9 +48,8 @@ import {
     IonMenuToggle,
     IonIcon,
     IonLabel,
-    IonRouterOutlet,
-    CommonModule,
-  ],
+    IonRouterOutlet
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

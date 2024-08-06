@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   IonButton,
@@ -15,7 +14,6 @@ import { CarbonModule, DialogService } from 'projects/carbon/src/public-api';
   templateUrl: './dialog.page.html',
   standalone: true,
   imports: [
-    CommonModule,
     CarbonModule,
     IonHeader,
     IonToolbar,

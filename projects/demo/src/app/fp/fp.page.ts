@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import {
   IonContent,
@@ -19,13 +19,12 @@ import {
   templateUrl: './fp.page.html',
   standalone: true,
   imports: [
-    CommonModule,
     CarbonModule,
     IonHeader,
     IonToolbar,
     IonTitle,
-    IonContent,
-  ],
+    IonContent
+],
 })
 export class FpPage implements OnInit {
   fp?: number;

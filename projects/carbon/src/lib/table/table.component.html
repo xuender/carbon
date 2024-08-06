@@ -1,10 +1,14 @@
 <ion-list>
-  <ion-item *ngFor="let r of data?.data;let i=index" button="true" [color]="i%2>0?'light':''">
-    <ion-col *ngFor="let f of fields" [size]="f.size?f.size:'auto'">
-      <ion-label color="medium" [title]="f.title">
-        {{ value(r,f.key, i)}}
-      </ion-label>
-    </ion-col>
-  </ion-item>
+  @for (r of data.data; track r; let i = $index) {
+    <ion-item button="true" [color]="i % 2 > 0 ? 'light' : ''">
+      @for (f of fields; track f) {
+        <ion-col [size]="f.size ? f.size : 'auto'">
+          <ion-label color="medium" [title]="f.title">
+            {{ value(r, f.key, i) }}
+          </ion-label>
+        </ion-col>
+      }
+    </ion-item>
+  }
   <car-pagination [data]="data" (turn)="to($event)"></car-pagination>
 </ion-list>

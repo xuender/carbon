@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
@@ -37,15 +36,7 @@ interface Field {
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.css'],
   standalone: true,
-  imports: [
-    IonItem,
-    IonButtons,
-    IonBadge,
-    IonButton,
-    IonIcon,
-    CommonModule,
-    RouterLink,
-  ],
+  imports: [IonItem, IonButtons, IonBadge, IonButton, IonIcon, RouterLink],
 })
 export class PaginationComponent {
   @Input()

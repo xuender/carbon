@@ -1,18 +1,32 @@
 <ion-item lines="none">
   <ion-buttons slot="end">
     <ion-badge color="light">{{ start }} / {{ data.count }}</ion-badge>
-    <ng-container *ngIf="!url">
-      <ion-button *ngFor="let b of buttons" [disabled]="b.disabled" (click)="to(b.offset)">
-        <ion-icon *ngIf="b.icon" [name]="b.icon+'-outline'" slot="start"></ion-icon>
-        <ion-badge *ngIf="b.num" color="light">{{ b.num }}</ion-badge>
-      </ion-button>
-    </ng-container>
-    <ng-container *ngIf="url">
-      <ion-button *ngFor="let b of buttons" [disabled]="b.disabled" routerDirection="root"
-        [routerLink]="[url,{offset:b.offset}]">
-        <ion-icon *ngIf="b.icon" [name]="b.icon+'-outline'" slot="start"></ion-icon>
-        <ion-badge *ngIf="b.num" color="light">{{ b.num }}</ion-badge>
-      </ion-button>
-    </ng-container>
+    @if (url) {
+      @for (b of buttons; track b) {
+        <ion-button
+          [disabled]="b.disabled"
+          routerDirection="root"
+          [routerLink]="[url, { offset: b.offset }]"
+        >
+          @if (b.icon) {
+            <ion-icon [name]="b.icon + '-outline'" slot="start"></ion-icon>
+          }
+          @if (b.num) {
+            <ion-badge color="light">{{ b.num }}</ion-badge>
+          }
+        </ion-button>
+      }
+    } @else {
+      @for (b of buttons; track b) {
+        <ion-button [disabled]="b.disabled" (click)="to(b.offset)">
+          @if (b.icon) {
+            <ion-icon [name]="b.icon + '-outline'" slot="start"></ion-icon>
+          }
+          @if (b.num) {
+            <ion-badge color="light">{{ b.num }}</ion-badge>
+          }
+        </ion-button>
+      }
+    }
   </ion-buttons>
 </ion-item>

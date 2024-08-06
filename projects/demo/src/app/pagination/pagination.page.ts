@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
@@ -26,7 +26,6 @@ import {
   standalone: true,
   imports: [
     CarbonModule,
-    CommonModule,
     IonHeader,
     IonToolbar,
     IonButtons,
@@ -37,8 +36,8 @@ import {
     IonList,
     IonItem,
     IonFooter,
-    PaginationComponent,
-  ],
+    PaginationComponent
+],
 })
 export class PaginationPage {
   res: TableResult = {

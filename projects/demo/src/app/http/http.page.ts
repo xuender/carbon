@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import {
@@ -18,7 +18,6 @@ import { CarbonModule } from 'projects/carbon/src/public-api';
   templateUrl: './http.page.html',
   standalone: true,
   imports: [
-    CommonModule,
     CarbonModule,
     HttpClientModule,
     IonHeader,
@@ -26,8 +25,8 @@ import { CarbonModule } from 'projects/carbon/src/public-api';
     IonContent,
     IonList,
     IonToolbar,
-    IonItem,
-  ],
+    IonItem
+],
 })
 export class HttpPage {
   constructor(private http: HttpClient, private dialogServ: DialogService) {}

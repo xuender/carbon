@@ -12,7 +12,6 @@ import {
   NavParams,
   PopoverController,
 } from '@ionic/angular/standalone';
-import { CommonModule } from '@angular/common';
 
 import { PopoverItem, PopoverOptions } from './popover-options';
 
@@ -30,7 +29,6 @@ import { PopoverItem, PopoverOptions } from './popover-options';
     IonBadge,
     IonCheckbox,
     IonPopover,
-    CommonModule,
   ],
 })
 export class PopoverComponent {

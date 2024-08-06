@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IonCol, IonItem, IonLabel, IonList } from '@ionic/angular/standalone';
 
@@ -29,9 +29,8 @@ interface Field {
     IonItem,
     IonCol,
     IonLabel,
-    CommonModule,
-    PaginationComponent,
-  ],
+    PaginationComponent
+],
 })
 export class TableComponent {
   @Input()

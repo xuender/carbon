@@ -1,70 +1,79 @@
 <ion-content>
   <ion-list>
-    <ion-list-header *ngIf="options.title">
-      {{ options.title }}
-    </ion-list-header>
-    <ng-container *ngFor="let i of options.items">
-      <ion-item
-        *ngIf="!i.hide"
-        (click)="close(i)"
-        [button]="true"
-        [detail]="i.children && i.children.length"
-        [color]="i.itemColor"
-        [id]="i.code"
-      >
-        <ion-icon
-          *ngIf="i.icon"
-          slot="start"
-          [name]="i.icon"
-          [color]="i.iconColor ? i.iconColor : i.color"
-        ></ion-icon>
-        <ion-label [color]="i.color">{{ i.label }}</ion-label>
-        <ion-badge *ngIf="i.badge" slot="end">{{ i.badge }}</ion-badge>
-        <ion-checkbox
-          *ngIf="i.checked"
-          slot="end"
-          checked="true"
-          aria-label="label"
-        ></ion-checkbox>
-      </ion-item>
-    </ng-container>
+    @if (options.title) {
+      <ion-list-header>
+        {{ options.title }}
+      </ion-list-header>
+    }
+    @for (i of options.items; track i) {
+      @if (!i.hide) {
+        <ion-item
+          (click)="close(i)"
+          [button]="true"
+          [detail]="i.children && i.children.length"
+          [color]="i.itemColor"
+          [id]="i.code"
+        >
+          @if (i.icon) {
+            <ion-icon
+              slot="start"
+              [name]="i.icon"
+              [color]="i.iconColor ? i.iconColor : i.color"
+            ></ion-icon>
+          }
+          <ion-label [color]="i.color">{{ i.label }}</ion-label>
+          @if (i.badge) {
+            <ion-badge slot="end">{{ i.badge }}</ion-badge>
+          }
+          @if (i.checked) {
+            <ion-checkbox
+              slot="end"
+              checked="true"
+              aria-label="label"
+            ></ion-checkbox>
+          }
+        </ion-item>
+      }
+    }
 
-    <ion-popover
-      *ngFor="let p of parent"
-      [trigger]="p.code"
-      [dismissOnSelect]="true"
-      side="end"
-    >
-      <ng-template>
-        <ion-content>
-          <ion-list>
-            <ng-container *ngFor="let i of p.children">
-              <ion-item
-                *ngIf="!i.hide"
-                (click)="close(i)"
-                [button]="true"
-                [detail]="i.children && i.children.length"
-                [color]="i.itemColor"
-              >
-                <ion-icon
-                  *ngIf="i.icon"
-                  slot="start"
-                  [name]="i.icon"
-                  [color]="i.iconColor ? i.iconColor : i.color"
-                ></ion-icon>
-                <ion-label [color]="i.color">{{ i.label }}</ion-label>
-                <ion-badge *ngIf="i.badge" slot="end">{{ i.badge }}</ion-badge>
-                <ion-checkbox
-                  *ngIf="i.checked"
-                  slot="end"
-                  checked="true"
-                  aria-label="label"
-                ></ion-checkbox>
-              </ion-item>
-            </ng-container>
-          </ion-list>
-        </ion-content>
-      </ng-template>
-    </ion-popover>
+    @for (p of parent; track p) {
+      <ion-popover [trigger]="p.code" [dismissOnSelect]="true" side="end">
+        <ng-template>
+          <ion-content>
+            <ion-list>
+              @for (i of p.children; track i) {
+                @if (!i.hide) {
+                  <ion-item
+                    (click)="close(i)"
+                    [button]="true"
+                    [detail]="i.children && i.children.length"
+                    [color]="i.itemColor"
+                  >
+                    @if (i.icon) {
+                      <ion-icon
+                        slot="start"
+                        [name]="i.icon"
+                        [color]="i.iconColor ? i.iconColor : i.color"
+                      ></ion-icon>
+                    }
+                    <ion-label [color]="i.color">{{ i.label }}</ion-label>
+                    @if (i.badge) {
+                      <ion-badge slot="end">{{ i.badge }}</ion-badge>
+                    }
+                    @if (i.checked) {
+                      <ion-checkbox
+                        slot="end"
+                        checked="true"
+                        aria-label="label"
+                      ></ion-checkbox>
+                    }
+                  </ion-item>
+                }
+              }
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+    }
   </ion-list>
 </ion-content>
